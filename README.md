@@ -1,5 +1,5 @@
 # distributed_hctsa
-Running hctsa on a cluster (qsub)
+Running hctsa on a cluster (pbs)
 
 A template set of files for Matlab-based distributed computing for *hctsa* calculations on a cluster with `qsub`.
 
