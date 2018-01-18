@@ -1,4 +1,4 @@
-#!/bin/csh
+#!/bin/bash
 # Set name of job
 #PBS -N MyJobName
 #PBS -o demo.txt
