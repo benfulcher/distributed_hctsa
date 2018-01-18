@@ -18,24 +18,5 @@ cd "$PBS_O_WORKDIR"
 # Show the host on which the job ran
 hostname
 # Launch the Matlab job
-matlab -nodisplay -r "disp(pwd); HCTSA_Runscript; exit"
+matlab -nodisplay -singleCompThread -r "disp(pwd); HCTSA_Runscript; exit"
 exit
-
-
-# Request CPU resources
-# SBATCH --ntasks=1
-# SBATCH --ntasks-per-node=1
-# SBATCH --cpus-per-task=1
-# Memory usage (MB)
-# SBATCH --mem-per-cpu=12000
-# SBATCH --time=10:00:00
-
-# SBATCH --mail-type=FAIL
-# SBATCH --mail-type=END
-# SBATCH --mail-user=ben.fulcher@monash.edu
-
-# SBATCH --partition=main
-# SBATCH -p main
-
-# Show what SLURM ennvironment variables our environment has
-# env | grep SLURM
