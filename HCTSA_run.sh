@@ -1,4 +1,4 @@
-#!/bin/csh
+#!/bin/bash
 # Set range of ts_ids to calculate
 tsmin=1
 tsmax=3
