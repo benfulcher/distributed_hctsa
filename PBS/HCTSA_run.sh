@@ -1,7 +1,7 @@
 #!/bin/bash
 # Set range of ts_ids to calculate
 tsmin=1
-tsmax=3
+tsmax=6
 # Set number of time series to calculate per job
 NumPerJob=1
 
