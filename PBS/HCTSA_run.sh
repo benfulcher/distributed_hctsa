@@ -1,9 +1,14 @@
 #!/bin/bash
-# Set range of ts_ids to calculate
+
+# -------------------------------------------
+# USER INPUT:
+# -------------------------------------------
+# Set range of ts_ids to calculate:
 tsmin=1
 tsmax=3
 # Set number of time series to calculate per job
 NumPerJob=1
+# -------------------------------------------
 
 # Calculate the number of jobs required
 NumJobs=$((($tsmax-$tsmin)/$NumPerJob+1))
