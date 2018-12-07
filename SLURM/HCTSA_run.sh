@@ -1,9 +1,14 @@
 #!/bin/bash
+
+# -------------------------------------------
+# USER INPUT:
+# -------------------------------------------
 # Set range of ts_ids to calculate
 tsmin=1
 tsmax=1614
 # Set number of time series to calculate per job
 NumPerJob=100
+# -------------------------------------------
 
 # Calculate the number of jobs required
 NumJobs=$((($tsmax-$tsmin)/$NumPerJob+1))
@@ -29,7 +34,7 @@ done
 
 #
 # Next we want to go into each directory and create
-# a PBS script with a suitable job name
+# a SLURM script with a suitable job name
 # The file slurm_runscript.sh and HCTSA.mat must be in the base directory
 for ((i=0; i<$NumJobs; i++)); do
     # Define the script location:
@@ -44,7 +49,7 @@ for ((i=0; i<$NumJobs; i++)); do
 done
 
 #
-# Ok, so now we have all the PBS shell scripts for the jobs we want to
+# Ok, so now we have all the SLURM shell scripts for the jobs we want to
 # run in their respective directories.
 # Now we need to copy Matlab runscripts with the right range of ts_ids in them
 # (into each directory)
@@ -57,7 +62,7 @@ for ((i=0; i<$NumJobs; i++)); do
 done
 
 #
-# Ok, so now we want to go through and actually submit all the PBS scripts as jobs
+# Ok, so now we want to go through and actually submit all the SLURM scripts as jobs
 for ((i=0; i<$NumJobs; i++)); do
     cd ${DirNames[i]}
     JobNumber=$(sbatch slurm_runscript.sh) # Take note of the job number
