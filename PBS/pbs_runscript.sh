@@ -1,7 +1,7 @@
 #!/bin/bash
 # Set name of job
 #PBS -N xxNameOfJobxx
-#PBS -o matlab_output.txt
+#PBS -o demo.txt
 #PBS -j oe
 # Specify a queue:
 #PBS -q physics
