@@ -1,6 +1,6 @@
 #!/bin/bash
 # Set name of job
-#PBS -N MyJobName
+#PBS -N xxNameOfJobxx
 #PBS -o jobOutput.txt
 #PBS -j oe
 # Specify a queue:
@@ -10,7 +10,7 @@
 #PBS -l walltime=01:00:00
 # Email user if job ends or aborts
 #PBS -m ea
-#PBS –M ben.fulcher@sydney.edu.au
+#PBS -M ben.fulcher@sydney.edu.au
 #PBS -V
 
 # ---------------------------------------------------
