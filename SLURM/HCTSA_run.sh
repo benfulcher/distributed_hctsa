@@ -4,32 +4,32 @@
 # USER INPUT:
 # -------------------------------------------
 # Set range of ts_ids to calculate
-tsmin=1
-tsmax=1614
+tsMin=1
+tsMax=1614
 # Set number of time series to calculate per job
-NumPerJob=100
+numPerJob=100
 # -------------------------------------------
 
 # Calculate the number of jobs required
-NumJobs=$((($tsmax-$tsmin)/$NumPerJob+1))
+NumJobs=$((($tsMax-$tsMin)/$numPerJob+1))
 
 #
 # Start by writing the directory structure
 # Stored in {DirNames[]} array
-TheTS=$tsmin
+TheTS=$tsMin
 for (( i=0; i<$NumJobs; i++)); do
     HereMin=$TheTS
-    if [ $i -eq $(($NumJobs-1)) -a $(($NumJobs*$NumPerJob)) -gt $tsmax ]; then
-        HereMax=$tsmax
+    if [ $i -eq $(($NumJobs-1)) -a $(($NumJobs*$numPerJob)) -gt $tsMax ]; then
+        HereMax=$tsMax
     else
-        HereMax=$(($TheTS+$NumPerJob-1))
+        HereMax=$(($TheTS+$numPerJob-1))
     fi
     DirNames[i]="tsids_$HereMin-$HereMax" # Store the directory names
     JobNames[i]="tsids-$HereMin-$HereMax" # Make names for PBS jobs
     MinIDS[i]=$HereMin # Also store the minimum ts_id
     MaxIDS[i]=$HereMax # Also store the maximum ts_id
     mkdir ${DirNames[i]}
-    TheTS=$(($TheTS+$NumPerJob))
+    TheTS=$(($TheTS+$numPerJob))
 done
 
 #
