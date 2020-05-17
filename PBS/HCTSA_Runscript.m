@@ -1,7 +1,7 @@
 % Remember home directory
 myStartingDir = pwd;
 
-% Load paths for the HCTSA package:
+% Load paths for the hctsa package:
 cd('~/hctsa/')
 startup
 

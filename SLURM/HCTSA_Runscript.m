@@ -1,8 +1,8 @@
 % Remember home directory
 myStartingDir = pwd;
 
-% Load paths for the HCTSA package
-cd('/home/benfulcher/Monash076/Ben/TimeSeriesRegression/hctsa')
+% Load paths for the hctsa package
+cd('~/hctsa')
 startup
 
 % Move Matlab back to the working PBS directory
