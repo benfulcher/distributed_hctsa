@@ -3,7 +3,7 @@ Code for distributing highly comparative time-series analysis computations, usin
 
 A basic pipeline:
 1. Set up a large `HCTSA.mat` file for your computation on your local machine using `TS_init`.
-2. Ensure that the _hctsa_ version on your computing cluster is identical to the local version used to run `TS_init` (otherwise results could be inconsistent).
+2. Ensure that the _hctsa_ version on your computing cluster is identical to the local version used to run `TS_Init` (otherwise results could be inconsistent).
 3. Transfer the (uncomputed) `HCTSA.mat` file onto the cluster
 4. Set the parameters `tsmin`, `tsmax`, and `NumPerJob` in `HCTSA_run.sh`.
    These parameters determine how `HCTSA.mat` will be distributed into segments, each of which will be submitted as a cluster job.
