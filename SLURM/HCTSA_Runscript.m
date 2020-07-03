@@ -25,7 +25,7 @@ customFile = 'HCTSA_subset.mat';
 %-------------------------------------------------------------------------------
 % Make the required subset from the master HCTSA file:
 %-------------------------------------------------------------------------------
-TS_subset('../HCTSA.mat',tsid_min:tsid_max,[],1,customFile);
+TS_Subset('../HCTSA.mat',tsid_min:tsid_max,[],1,customFile);
 
 % ------------------------------------------------------------------------------
 %% Start calculating:
@@ -40,7 +40,7 @@ currentId = tsid_min;
 while currentId <= tsid_max
     tsRange = (currentId:currentId + nSeriesPerGo);
     tsRange(2) = min([tsRange(2),tsid_max]);
-    TS_compute(useParralel,tsRange,opRange,'bad',customFile);
+    TS_Compute(useParralel,tsRange,opRange,'bad',customFile);
     currentId = currentId + nSeriesPerGo + 1;
 end
 
