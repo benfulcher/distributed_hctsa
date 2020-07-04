@@ -2,7 +2,7 @@
 # Set name of job shown in squeue
 #SBATCH --job-name xxNameOfJobxx
 # Set project code account
-#SBATCH --account=Monash076
+#SBATCH --account=XXX
 # Request CPU resources
 #SBATCH --ntasks=1
 #SBATCH --ntasks-per-node=1
@@ -14,7 +14,7 @@
 # Email user if job fails or ends
 #SBATCH --mail-type=FAIL
 #SBATCH --mail-type=END
-#SBATCH --mail-user=ben.fulcher@monash.edu
+#SBATCH --mail-user=XXX@XXX
 # Specify a queue (called a partition on SLURM)
 #SBATCH --partition=main
 #SBATCH -p main
