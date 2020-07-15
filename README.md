@@ -9,5 +9,6 @@ A basic pipeline:
    These parameters determine how `HCTSA.mat` will be distributed into segments, each of which will be submitted as a cluster job.
 5. Run `HCTSA_run.sh` in the parent directory which should contain the `HCTSA.mat` file.
    This will generate a set of directories containing subsets of time series.
+   (NB: you may need to grant yourself permission to execute: `chmod u+x HCTSA_run.sh`)
 6. When all computations are complete, stitch all the subsections of the main `HCTSA` file back together again using `combineBatchFiles`.
    This yields a fully computed `HCTSA.mat` file. :smile:
